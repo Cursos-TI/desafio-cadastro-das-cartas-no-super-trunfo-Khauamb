@@ -7,8 +7,8 @@ int main() {
     float Area;
     float PIB;
     int Turismo;
-    int numero1 = Populacao, numero2 = Area, DP;
-    int numero1 = Populacao, numero2 = PIB, PPC;
+    int DP;
+    int PPC;
 
     printf ("Carta A\n");
 
@@ -49,9 +49,8 @@ int main() {
 
     printf ("Número de pontos turísticos: %d\n", Turismo);
 
-    printf ("Número de pontos turísticos: %d\n", Turismo);
-
-
+    Populacao /= PIB;
+    printf ("PIB per capita: %d\n", Populacao);
 
     printf ("Carta B\n");
 
@@ -89,6 +88,12 @@ int main() {
     printf ("PIB: %f\n", PIB);
 
     printf ("Número de pontos turísticos: %d\n", Turismo);
+
+    Populacao /= Area;
+    printf ("Densidade populacional: %d\n", Populacao);
+
+    Populacao /= PIB;
+    printf ("PIB per capita: %d\n", Populacao);
 
     return 0;
 }
