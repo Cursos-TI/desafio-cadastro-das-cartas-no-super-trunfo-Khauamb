@@ -1,100 +1,124 @@
 int main() {
 
-    char Estado[50];
-    char Codigo[50];
-    char Cidade[50];
-    int Populacao;
-    float Area;
-    float PIB;
-    int Turismo;
-    float DP;
-    float PPC;
+    char EstadoA[50];
+    char CodigoA[50];
+    char CidadeA[50];
+    unsigned int PopulacaoA;
+    long double AreaA;
+    long double PIBA;
+    int TurismoA;
+    // Densidade populacional
+    long double DPA;
+    //PIB per capita
+    long double PPCA;
+    int ResultadoA;
 
-    printf ("Carta A\n");
+    char EstadoB[50];
+    char CodigoB[50];
+    char CidadeB[50];
+    unsigned int PopulacaoB;
+    long double AreaB;
+    long double PIBB;
+    int TurismoB;
+    // Densidade populacional
+    long double DPB;
+    //PIB per capita
+    long double PPCB;
+    int ResultadoB;
 
-    printf ("Digite o Nome do Estado: ");
-    scanf ("%s", &Estado);
-
-    printf ("Digite o Código da carta: ");
-    scanf ("%s", &Codigo);
-
-    printf ("Digite o Nome da cidade: ");
-    scanf ("%s", &Cidade);
-
-    printf ("Digite o número populacional: ");
-    scanf ("%d", &Populacao);
-
-    printf ("Digite a área do estado em km²: ");
-    scanf ("%f", &Area);
-
-    printf ("Digite o PIB: ");
-    scanf ("%f", &PIB);
-
-    printf ("Digite o Número de pontos turísticos: ");
-    scanf ("%d", &Turismo);
-
-    printf ("Nome do Estado: %s\n", Estado);
-
-    printf ("Código da carta: %s\n", Codigo);
-
-    printf ("Nome da cidade: %s\n", Cidade);
-
-    printf ("População: %d\n", Populacao);
-
-    printf ("Área do estado em km²: %f\n", Area);
-
-    printf ("PIB: %f\n", PIB);
-
-    printf ("Número de pontos turísticos: %d\n", Turismo);
-
-    DP = (float)(Populacao / Area);
-    printf ("Densidade populacional: %f\n", DP);
-
-    PPC = (float)(PIB / Populacao);
-    printf ("PIB per capita: %f\n", PPC);
-
-    printf ("Carta B\n");
+    printf ("*** Carta A ***\n");
 
     printf ("Digite o Nome do Estado: ");
-    scanf ("%s", &Estado);
+    scanf ("%s", &EstadoA);
 
     printf ("Digite o Código da carta: ");
-    scanf ("%s", &Codigo);
+    scanf ("%s", &CodigoA);
 
     printf ("Digite o Nome da cidade: ");
-    scanf ("%s", &Cidade);
+    scanf ("%s", &CidadeA);
 
     printf ("Digite o número populacional: ");
-    scanf ("%d", &Populacao);
+    scanf ("%u", &PopulacaoA);
 
     printf ("Digite a área do estado em km²: ");
-    scanf ("%f", &Area);
+    scanf ("%.3lf", &AreaA);
 
     printf ("Digite o PIB: ");
-    scanf ("%f", &PIB);
+    scanf ("%.3lf", &PIBA);
 
     printf ("Digite o Número de pontos turísticos: ");
-    scanf ("%d", &Turismo);
+    scanf ("%d", &TurismoA);
 
-    printf ("Nome do Estado: %s\n", Estado);
+    printf ("Nome do Estado: %s\n", EstadoA);
 
-    printf ("Código da carta: %s\n", Codigo);
+    printf ("Código da carta: %s\n", CodigoA);
 
-    printf ("Nome da cidade: %s\n", Cidade);
+    printf ("Nome da cidade: %s\n", CidadeA);
 
-    printf ("População: %d\n", Populacao);
+    printf ("População: %u\n", PopulacaoA);
 
-    printf ("Área do estado em km²: %f\n", Area);
+    printf ("Área do estado em km²: %.3lf\n", AreaA);
 
-    printf ("PIB: %f\n", PIB);
+    printf ("PIB: %.3lf\n", PIBA);
 
-    printf ("Número de pontos turísticos: %d\n", Turismo);
+    printf ("Número de pontos turísticos: %d\n", TurismoA);
 
-    DP = (float)(Populacao / Area);
-    printf ("Densidade populacional: %f\n", DP);
+    DPA = (float)(PopulacaoA / AreaA);
+    printf ("Densidade populacional: %.3lf\n", DPA);
 
-    PPC = (float)(PIB / Populacao);
-    printf ("PIB per capita: %f\n", PPC);
+    PPCA = (float)(PIBA / PopulacaoA);
+    printf ("PIB per capita: %.3lf\n", PPCA);
+
+    printf ("*** Carta B ***\n");
+
+    printf ("Digite o Nome do Estado: ");
+    scanf ("%s", &EstadoB);
+
+    printf ("Digite o Código da carta: ");
+    scanf ("%s", &CodigoB);
+
+    printf ("Digite o Nome da cidade: ");
+    scanf ("%s", &CidadeB);
+
+    printf ("Digite o número populacional: ");
+    scanf ("%u", &PopulacaoB);
+
+    printf ("Digite a área do estado em km²: ");
+    scanf ("%.3lf", &AreaB);
+
+    printf ("Digite o PIB: ");
+    scanf ("%.3lf", &PIBB);
+
+    printf ("Digite o Número de pontos turísticos: ");
+    scanf ("%d", &TurismoB);
+
+    printf ("Nome do Estado: %s\n", EstadoB);
+
+    printf ("Código da carta: %s\n", CodigoB);
+
+    printf ("Nome da cidade: %s\n", CidadeB);
+
+    printf ("População: %u\n", PopulacaoB);
+
+    printf ("Área do estado em km²: %.3lf\n", AreaB);
+
+    printf ("PIB: %.3lf\n", PIBB);
+
+    printf ("Número de pontos turísticos: %d\n", TurismoB);
+
+    DPB = (float)(PopulacaoB / AreaB);
+    printf ("Densidade populacional: %.3lf\n", DPB);
+
+    PPCB = (float)(PIBB / PopulacaoB);
+    printf ("PIB per capita: %.3lf\n", PPCB);
+
+    printf ("*** Pontuação ***\n");
+
+    ResultadoA = PPCA > PPCB;
+    ResultadoB = DPA > DPA;
+
+    printf ("O PPCA comparado ao PPCA tem o valor de %d\n",PPCA, ResultadoA);
+    printf ("O DPA comparado ao DPB tem o valor de %d\n",ResultadoB);
 
     return 0;
 }
