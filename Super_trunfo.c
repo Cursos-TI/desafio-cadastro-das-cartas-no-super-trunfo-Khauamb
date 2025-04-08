@@ -11,8 +11,6 @@ int main() {
     long double DPA;
     //PIB per capita
     long double PPCA;
-    int ResultadoA;
-
     char EstadoB[50];
     char CodigoB[50];
     char CidadeB[50];
@@ -24,7 +22,12 @@ int main() {
     long double DPB;
     //PIB per capita
     long double PPCB;
+    int ResultadoA;
     int ResultadoB;
+    int ResultadoC;
+    int ResultadoD;
+    int ResultadoE;
+    int ResultadoF;
 
     printf ("*** Carta A ***\n");
 
@@ -114,11 +117,21 @@ int main() {
 
     printf ("*** Pontuação ***\n");
 
-    ResultadoA = PPCA > PPCB;
-    ResultadoB = DPA > DPA;
+    ResultadoA = PopulacaoA > PopulacaoB;
+    ResultadoB = AreaA > AreaB;
+    ResultadoC = PIBA > PIBB;
+    ResultadoD = TurismoA > TurismoB;
+    ResultadoE = PPCA > PPCB;
+    ResultadoF = DPA < DPA;
 
-    printf ("O PPCA comparado ao PPCA tem o valor de %d\n",PPCA, ResultadoA);
-    printf ("O DPA comparado ao DPB tem o valor de %d\n",ResultadoB);
+    printf ("A %s comparado a PopulaçãoB tem o valor maior? %d\n", PopulacaoA, ResultadoA);
+    printf ("A %s comparado a AreaB tem o valor maior? %d\n", AreaA, ResultadoB);
+    printf ("O %s comparado ao PIBB tem o valor maior? %d\n", PIBA, ResultadoC);
+    printf ("O %s comparado ao TurismoB tem o valor maior? %d\n", TurismoA, ResultadoD);
+    printf ("O %s comparado ao PPCB tem o valor maior? %d\n", PPCA, ResultadoE);
+    printf ("A %s comparado a DPB tem o valor menor? %d\n", DPA, ResultadoF);
+
+    printf ("O %s comparado ao DPB tem o valor maior? %d\n", DPA, ResultadoF);
 
     return 0;
 }
