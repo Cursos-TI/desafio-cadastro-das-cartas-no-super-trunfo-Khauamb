@@ -1,33 +1,29 @@
+#include <stdio.h>
+
 int main() {
 
     char EstadoA[50];
     char CodigoA[50];
     char CidadeA[50];
-    unsigned int PopulacaoA;
-    long double AreaA;
-    long double PIBA;
+    int PopulacaoA;
+    float AreaA;
+    float PIBA;
     int TurismoA;
     // Densidade populacional
-    long double DPA;
+    float DPA;
     //PIB per capita
-    long double PPCA;
+    float PPCA;
     char EstadoB[50];
     char CodigoB[50];
     char CidadeB[50];
-    unsigned int PopulacaoB;
-    long double AreaB;
-    long double PIBB;
+    int PopulacaoB;
+    float AreaB;
+    float PIBB;
     int TurismoB;
     // Densidade populacional
-    long double DPB;
+    float DPB;
     //PIB per capita
-    long double PPCB;
-    int ResultadoA;
-    int ResultadoB;
-    int ResultadoC;
-    int ResultadoD;
-    int ResultadoE;
-    int ResultadoF;
+    float PPCB;
 
     printf ("*** Carta A ***\n");
 
@@ -41,13 +37,13 @@ int main() {
     scanf ("%s", &CidadeA);
 
     printf ("Digite o número populacional: ");
-    scanf ("%u", &PopulacaoA);
+    scanf ("%d", &PopulacaoA);
 
     printf ("Digite a área do estado em km²: ");
-    scanf ("%.3lf", &AreaA);
+    scanf ("%f", &AreaA);
 
     printf ("Digite o PIB: ");
-    scanf ("%.3lf", &PIBA);
+    scanf ("%f", &PIBA);
 
     printf ("Digite o Número de pontos turísticos: ");
     scanf ("%d", &TurismoA);
@@ -58,19 +54,19 @@ int main() {
 
     printf ("Nome da cidade: %s\n", CidadeA);
 
-    printf ("População: %u\n", PopulacaoA);
+    printf ("População: %d\n", PopulacaoA);
 
-    printf ("Área do estado em km²: %.3lf\n", AreaA);
+    printf ("Área do estado em km²: %f\n", AreaA);
 
-    printf ("PIB: %.3lf\n", PIBA);
+    printf ("PIB: %f\n", PIBA);
 
     printf ("Número de pontos turísticos: %d\n", TurismoA);
 
     DPA = (float)(PopulacaoA / AreaA);
-    printf ("Densidade populacional: %.3lf\n", DPA);
+    printf ("Densidade populacional: %f\n", DPA);
 
     PPCA = (float)(PIBA / PopulacaoA);
-    printf ("PIB per capita: %.3lf\n", PPCA);
+    printf ("PIB per capita: %f\n", PPCA);
 
     printf ("*** Carta B ***\n");
 
@@ -84,13 +80,13 @@ int main() {
     scanf ("%s", &CidadeB);
 
     printf ("Digite o número populacional: ");
-    scanf ("%u", &PopulacaoB);
+    scanf ("%d", &PopulacaoB);
 
     printf ("Digite a área do estado em km²: ");
-    scanf ("%.3lf", &AreaB);
+    scanf ("%f", &AreaB);
 
     printf ("Digite o PIB: ");
-    scanf ("%.3lf", &PIBB);
+    scanf ("%f", &PIBB);
 
     printf ("Digite o Número de pontos turísticos: ");
     scanf ("%d", &TurismoB);
@@ -101,48 +97,29 @@ int main() {
 
     printf ("Nome da cidade: %s\n", CidadeB);
 
-    printf ("População: %u\n", PopulacaoB);
+    printf ("População: %d\n", PopulacaoB);
 
-    printf ("Área do estado em km²: %.3lf\n", AreaB);
+    printf ("Área do estado em km²: %f\n", AreaB);
 
-    printf ("PIB: %.3lf\n", PIBB);
+    printf ("PIB: %f\n", PIBB);
 
     printf ("Número de pontos turísticos: %d\n", TurismoB);
 
     DPB = (float)(PopulacaoB / AreaB);
-    printf ("Densidade populacional: %.3lf\n", DPB);
+    printf ("Densidade populacional: %f\n", DPB);
 
     PPCB = (float)(PIBB / PopulacaoB);
-    printf ("PIB per capita: %.3lf\n", PPCB);
+    printf ("PIB per capita: %f\n", PPCB);
 
     printf ("*** Pontuação ***\n");
 
-    ResultadoA = PopulacaoA > PopulacaoB;
-    ResultadoB = AreaA > AreaB;
-    ResultadoC = PIBA > PIBB;
-    ResultadoD = TurismoA > TurismoB;
-    ResultadoE = PPCA > PPCB;
-    ResultadoF = DPA < DPA;
-
-    printf ("A %s comparado a PopulaçãoB tem o valor maior? %d\n", PopulacaoA, ResultadoA);
-    printf ("A %s comparado a AreaB tem o valor maior? %d\n", AreaA, ResultadoB);
-    printf ("O %s comparado ao PIBB tem o valor maior? %d\n", PIBA, ResultadoC);
-    printf ("O %s comparado ao TurismoB tem o valor maior? %d\n", TurismoA, ResultadoD);
-    printf ("O %s comparado ao PPCB tem o valor maior? %d\n", PPCA, ResultadoE);
-    printf ("A %s comparado a DPB tem o valor menor? %d\n", DPA, ResultadoF);
-
-    printf ("O %s comparado ao DPB tem o valor maior? %d\n", DPA, ResultadoF);
+    printf ("A PopulaçãoA comparado a PopulaçãoB tem valor maior? %d\n", PopulacaoA > PopulacaoB);
+    printf ("A AreaA comparado a AreaB tem valor maior? %d\n", AreaA > AreaB);
+    printf ("O PIBA comparado ao PIBB tem valor maior? %d\n", PIBA > PIBB);
+    printf ("O TurismoA comparado ao TurismoB tem valor maior? %d\n", TurismoA > TurismoB);
+    printf ("O PPCA comparado ao PPCB tem valor maior? %d\n", PPCA > PPCB);
+    printf ("A DPA comparado a DPB tem valor menor? %d\n", DPA < DPB);
+    printf ("O Super poder da carta A comparado a Carta B é maior? %d\n", (PopulacaoA + AreaA + PIBA + TurismoA + PPCA + 1/DPA) > (PopulacaoB + AreaB + PIBB + TurismoB + PPCB + 1/DPB) );
 
     return 0;
 }
-
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
